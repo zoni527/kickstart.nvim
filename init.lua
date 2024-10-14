@@ -2,12 +2,14 @@ require 'user.keymaps'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.charset = 'utf-8'
+
 vim.g.have_nerd_font = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
+-- vim.opt.tabstop = 4
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -500,6 +502,7 @@ require('lazy').setup({
         clangd = {},
         -- gopls = {},
         -- pyright = {},
+        -- pylsp = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -532,7 +535,11 @@ require('lazy').setup({
       --    :Mason
       --
       --  You can press `g?` for help in this menu.
-      require('mason').setup()
+      require('mason').setup {
+        pip = {
+          upgrade_pip = true,
+        },
+      }
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
@@ -829,6 +836,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'custom.plugins.init',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
