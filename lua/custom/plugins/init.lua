@@ -18,4 +18,12 @@ return {
       require('42header').setup(opts)
     end,
   },
+  {
+    'tpope/vim-surround',
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  },
 }
