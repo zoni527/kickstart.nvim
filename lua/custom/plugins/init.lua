@@ -26,4 +26,7 @@ return {
     event = 'InsertEnter',
     config = true,
   },
+  {
+	  'EyzeCOLD/nvim-function-linecount',
+  },
 }
