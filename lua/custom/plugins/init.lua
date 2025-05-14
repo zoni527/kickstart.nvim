@@ -27,6 +27,6 @@ return {
     config = true,
   },
   {
-	  'EyzeCOLD/nvim-function-linecount',
+    'EyzeCOLD/nvim-function-linecount',
   },
 }

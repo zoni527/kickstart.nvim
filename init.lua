@@ -9,6 +9,7 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.diagnostic.config { virtual_text = true }
 -- vim.opt.tabstop = 4
 
 -- Enable mouse mode, can be useful for resizing splits for example!
