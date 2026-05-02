@@ -22,7 +22,13 @@ vim.opt.showmode = false
 vim.opt.breakindent = true
 
 -- Save undo history
+local undodir = vim.fn.expand '~/.local/state/nvim/undo'
+if vim.fn.isdirectory(undodir) == 0 then
+  vim.fn.mkdir(undodir, 'p')
+end
 vim.opt.undofile = true
+vim.opt.undodir = undodir
+vim.opt.swapfile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -504,7 +510,7 @@ require('lazy').setup({
         -- gopls = {},
         -- pyright = {},
         -- pylsp = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
